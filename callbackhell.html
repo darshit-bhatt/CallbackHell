@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callbackhell</title>
+</head>
+<body>
+    <script>
+        /*
+        conditions
+        1. 2sec student roll no.
+        2. 2sec 2nd name and age
+        3. 2sec gender 
+        */
+        const getRollNo = () => {
+            setTimeout(() => {
+                console.log("API getting roll no.");
+                let roll_no = [1,2,3,4,5];
+                console.log(roll_no);
+
+                setTimeout((rollno) => {
+                    const info = {
+                        name : "Darshit",
+                        age : 24
+                    }
+                    console.log(`My roll no is ${rollno}. My name is ${info.name} and I am ${info.age} years old.`);
+
+                    setTimeout((name) => {
+                        info.gender = "Male";
+                        console.log(`Gender = ${info.gender}`);
+                        
+                    }, 2000, info.name);
+
+                }, 2000, roll_no[1]);
+
+            }, 2000);
+        }
+        getRollNo();
+    </script>
+</body>
+</html>

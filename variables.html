@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>variables</title>
+  </head>
+  <body>
+    <script>
+      let a = "Darshit";
+      console.log("a = " + typeof a);  //outputs string
+
+      let b = 1;
+      console.log("b = " + typeof b);  //outputs number
+
+      let c = true;
+      console.log("c = " + typeof c); //outputs boolean
+
+      let d = ["a", "b"];
+      console.log("d = " + typeof d); //outputs object
+
+      let e = { name: "Darshit", age: 24 };
+      console.log("e = " + typeof e); //outputs object
+
+      let f = function () {};
+      console.log("f = " + typeof f); //outputs function
+
+      let g = "";
+      console.log("g = " + typeof g); //outputs string
+
+      let h = null;
+      console.log("h = " + typeof h); //outputs object
+
+      let i = undefined;
+      console.log("i = " + typeof i); //outputs undefined
+      
+      let w = {ab :function abc() {}};
+      function f1(x) {
+        if (typeof x == "function") {
+          return console.log("this is a function.");
+        } else {
+          return console.log("this is not a function.");
+        }
+      };
+      f1(w);
+
+      xyz = () => {};
+
+      function check(x) {
+        if (typeof x == "function") {
+          return console.log("this is a function.");
+        } 
+        else if (typeof x == "object") {
+          return console.log("this is an object.");
+        } 
+        else if (typeof x == "string") {
+          return console.log("this is a string.");
+        }
+        else if (typeof x == "number") {
+          console.log("this is a number.");
+        }
+        else if (typeof x == "boolean") {
+          console.log("this is a boolean.");
+        }
+        else if (typeof x == "undefined") {
+          console.log("this is an undefined.");
+        }
+      };
+        // check(w);
+        // check(xyz);
+        // check(a);
+        // check(b);
+        // check(c);
+        // check(d);
+        // check(e);
+        // check(f);
+        // check(h); 
+        // check(i);
+
+      // console.log("type of x is "+ typeof x);
+    </script>
+  </body>
+</html>

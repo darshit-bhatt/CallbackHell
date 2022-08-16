@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>callback</title>
+  </head>
+  <body>
+    <style>
+      body{
+        margin: 20px;
+        padding: 20px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: large;
+        background-color: ivory;
+        color: aliceblue;
+      }
+      button,input{
+        margin: 15px;
+        padding: 5px;
+        font-size: large;
+      }
+      #heading{
+        margin: 10px;
+        padding: 5px;
+        border: 1px solid black;
+        background-color: rgb(219, 68, 68);
+      }
+      #div1{
+        margin: 10px;
+        padding: 5px;
+        border: 1px solid black;
+        background-color: rgb(219, 68, 68);
+      }
+      #div2{
+        margin: 10px;
+        padding: 5px;
+        border: 1px solid black;
+        background-color: rgb(219, 68, 68);
+      }
+    </style>
+    <div id="heading">
+      <h2>Calculator</h2>
+    </div>
+    <br>
+      <div id="div1">
+        <label> Enter First Number:</label>
+        <input type="number" id="input1" />
+        <label> Enter Second Number:</label>
+        <input type="number" id="input2" />
+        <button id="myBtn1">Addition</button>
+        <button id="myBtn2">Subtraction</button>
+        <button id="myBtn3">Multiplication</button>
+        <button id="myBtn4">Division</button>
+        <br>
+      </div>
+    <div id="div2">
+      <p id="demo1"></p>
+      <p id="demo2"></p>
+      <p id="demo3"></p>
+      <p id="demo4"></p>
+    </div>
+    <script>
+    //METHOD1
+      // function f1(a, b, callback) {
+      //   let sum = a + b;
+      //   callback(sum);
+      // }
+      // // f1(5, 5, function (x) {
+      // //   document.getElementById("demo").innerHTML = "The result is = " + x;
+      // // });
+      // document.getElementById("myBtn").addEventListener("click", function(){f1(5, 5, function (x) {
+      //   document.getElementById("demo1").innerHTML = "The result is = " + x;
+      // })
+      // }
+      // );
+      //METHOD2
+      //Addition
+      function f1(callback) {
+        let a = document.getElementById("input1");
+        let b = document.getElementById("input2");
+        let sum = Number(a.value) + Number(b.value);
+        callback(sum);
+      }
+      document.getElementById("myBtn1").addEventListener("click", function(){f1(function (x) {
+        document.getElementById("demo1").innerHTML = "The result of addition is = " + x;
+      })
+      }
+      );
+      //subtraction
+      function f2(callback) {
+        let a = document.getElementById("input1");
+        let b = document.getElementById("input2");
+        let subtract = Number(a.value) - Number(b.value);
+        callback(subtract);
+      }
+      document.getElementById("myBtn2").addEventListener("click", function(){f2(function (x) {
+        document.getElementById("demo2").innerHTML = "The result of subtraction is = " + x;
+      })
+      }
+      );
+      //Multiplication
+      function f3(callback) {
+        let a = document.getElementById("input1");
+        let b = document.getElementById("input2");
+        let multiply = Number(a.value) * Number(b.value);
+        callback(multiply);
+      }
+      document.getElementById("myBtn3").addEventListener("click", function(){f3(function (x) {
+        document.getElementById("demo3").innerHTML = "The result of multiplication is = " + x;
+      })
+      }
+      );
+      //Div
+      function f4(callback) {
+        let a = document.getElementById("input1");
+        let b = document.getElementById("input2");
+        let div = Number(a.value) / Number(b.value);
+        callback(div);
+      }
+      document.getElementById("myBtn4").addEventListener("click", function(){f4(function (x) {
+        document.getElementById("demo4").innerHTML = "The result of division is = " + x;
+      })
+      }
+      );
+    </script>
+  </body>
+</html>
